@@ -1,5 +1,7 @@
 package org.miu.lesson8.prob3;
 
+import java.util.Objects;
+
 public class Marketing {
 	private String employeename;
 	private String productname;
@@ -46,5 +48,10 @@ public class Marketing {
 		return marketing.getEmployeename().equals(this.getEmployeename()) &&
 				marketing.getProductname().equals(this.getProductname()) &&
 						marketing.getSalesamount()==this.getSalesamount();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(employeename, productname, salesamount);
 	}
 }
